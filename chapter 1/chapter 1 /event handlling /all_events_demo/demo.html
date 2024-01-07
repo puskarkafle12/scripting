@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Example 1: Button with Click Event -->
+    <button onclick="showAlert()">Click me!</button>
+
+    <!-- Example 2: Form with Submit Event -->
+    <form onsubmit="submitForm(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Example 3: Input with Change Event -->
+    <label for="textInput">Type something:</label>
+    <input type="text" id="textInput" onchange="showInputValue()">
+
+    <!-- Example 4: Image with Mouseover Event -->
+    <img src="https://placekitten.com/200/200" alt="Kitten" onmouseover="showImageInfo()">
+
+    <!-- Example 5: List Item with Double Click Event -->
+    <ul>
+        <li ondblclick="alert('List item double-clicked!')">Double-click me</li>
+    </ul>
+
+    <!-- Script tag to define event handler functions -->
+    <script>
+        // Example 1: Button with Click Event
+        function showAlert() {
+            alert('Button clicked!');
+        }
+
+        // Example 2: Form with Submit Event
+        function submitForm(event) {
+            event.preventDefault(); // Prevents the form from submitting in the traditional way
+            alert('Form submitted!');
+        }
+
+        // Example 3: Input with Change Event
+        function showInputValue() {
+            const inputValue = document.getElementById('textInput').value;
+            alert('Input value changed to: ' + inputValue);
+        }
+
+        // Example 4: Image with Mouseover Event
+        function showImageInfo() {
+            alert('Mouse over the kitten image!');
+        }
+    </script>
+
+</body>
+</html>

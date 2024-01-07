@@ -1,0 +1,50 @@
+
+    .form-control {
+      width: 20vw;
+    }
+
+    body {
+      background-image: url('https://img.freepik.com/premium-vector/geometric-gradient-technology-background_23-2149110132.jpg?size=626&ext=jpg&ga=GA1.1.1412446893.1704499200&semt=ais');
+      /* Replace with your background image path */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .welcome-text {
+      margin-bottom: 20px;
+      font-family: 'Arial', sans-serif;
+      /* Specify your desired font-family */
+      font-size: 24px;
+      /* Specify your desired font size */
+      font-weight: bold;
+      /* Specify your desired font weight */
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      /* Stack children vertically */
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      color: white;
+      /* Set text color to white */
+    }
+
+    .form-container {
+      background-color: rgba(173, 216, 230, 0.15);
+      /* Transparent blue background color */
+      border-radius: 10px;
+      /* Border radius */
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+      /* Box shadow for a subtle effect */
+      padding: 20px;
+      width: 24vw;
+      /* Optional: Adjust the width based on your design */
+    }
+
+    label {
+      margin-bottom: 0.8vh;
+    }

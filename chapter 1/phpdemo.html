@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Example</title>
+</head>
+<body>
+    <h2>Registration Form</h2>
+
+    <?php
+    // PHP form validation logic
+    $username = $password = '';
+    $errors = [];
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Sanitize input data
+        $username = htmlspecialchars($_POST['username']);
+        $password = htmlspecialchars($_POST['password']);
+
+        // Validate username
+        if (empty($username)) {
+            $errors['username'] = 'Username is required';
+        } elseif (!preg_match('/^[a-zA-Z0-9_]{5,}$/', $username)) {
+            $errors['username'] = 'Username must be at least 5 characters long and can only contain letters, numbers, and underscores';
+        }
+
+        // Validate password
+        if (empty($password)) {
+            $errors['password'] = 'Password is required';
+        } elseif (strlen($password) < 8) {
+            $errors['password'] = 'Password must be at least 8 characters long';
+        }
+    }
+    ?>
+
+    <!-- HTML form -->
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="<?php echo $username; ?>">
+        <span style="color: red;"><?php echo $errors['username'] ?? ''; ?></span><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" value="<?php echo $password; ?>">
+        <span style="color: red;"><?php echo $errors['password'] ?? ''; ?></span><br>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
