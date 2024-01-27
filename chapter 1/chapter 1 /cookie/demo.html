@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Example</title>
+</head>
+<body>
+
+  <h2>Cookie Example</h2>
+
+  <script>
+    document.cookie = "username=sdfdsdf; expires=Sun, 31 Dec 2024 00:00:00 GMT; path=/";
+    function setCookie(name, value, daysToExpire) {
+      const expirationDate = new Date();
+      expirationDate.setDate(expirationDate.getDate() + daysToExpire);
+
+      const expires = "expires=" + expirationDate.toUTCString();
+      document.cookie = name + "=" + value + "; " + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+      const cookie = document.cookie;
+      const cookieArray = cookie.split(';');
+
+      for (let i = 0; i < cookieArray.length; i++) {
+        let cookie = cookieArray[i].trim();
+        if (cookie.indexOf(name + "=") === 0) {
+          return cookie.substring(name.length + 1, cookie.length);
+        }
+      }
+
+      return null;
+    }
+
+    function deleteCookie(name) {
+      document.cookie = name + "=; expires=Thu, 01 Jan 2024 00:00:00 GMT; path=/";
+    }
+
+    setCookie("username", "JohnDoe", 7);
+
+    const usernameValue = getCookie("username");
+    document.write("<p>Username: " + (usernameValue ? usernameValue : "Not set") + "</p>");
+
+    // Delete the "username" cookie
+    // deleteCookie("username");
+
+    // // Verify the "username" cookie is deleted
+    // const deletedUsernameValue = getCookie("username");
+    // document.write("<p>Deleted Username: " + (deletedUsernameValue ? deletedUsernameValue : "Not set") + "</p>");
+  </script>
+
+</body>
+</html>
