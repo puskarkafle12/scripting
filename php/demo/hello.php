@@ -1,6 +1,14 @@
 <?php
-// PHP code goes here
 $variable = "Hello everyone ";
+?>
+<?php
+$var="hello";
+for ($i=0; $i<10; $i++){
+    for ($j=0; $j<10; $j++){
+        echo $j;
+    }
+    echo "<br>";
+}
 ?>
 
 <!DOCTYPE html>

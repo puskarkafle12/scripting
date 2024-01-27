@@ -6,7 +6,7 @@
     <title>User Login Form</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial,sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -68,8 +68,15 @@
 
         if (username === '' || password === '') {
             alert('Username and password are required.');
-        } else {
+            return true
+        } 
+        if (password.length<8){
+            alert('password must be grater than 8')
+            return false
+        }
+        else {
             alert('Login successful!');
+            return true
         }
     }
 </script>

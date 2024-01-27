@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Example 3</title>
+</head>
+<body>
+
+<div id="myDiv">This is a div.</div>
+
+<script>
+    // Create a new paragraph element
+    var newParagraph = document.createElement("p");
+    newParagraph.textContent = "This is a new paragraph.";
+
+    // Append the new paragraph to the existing div
+    document.getElementById("myDiv").appendChild(newParagraph);
+</script>
+
+</body>
+</html>

@@ -6,14 +6,38 @@
     <title>Event Handling Example</title>
     <style>
         body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 20px;
+            margin: 0;
+            background-color: #f4f4f4;
         }
+
         button {
-            padding: 10px;
+            padding: 10px 20px;
             font-size: 16px;
+            margin: 10px;
             cursor: pointer;
+        }
+
+        form {
+            margin: 10px;
+        }
+
+        label, input {
+            margin-bottom: 10px;
+        }
+
+        img {
+            margin: 10px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -26,12 +50,14 @@
     <form onsubmit="submitForm(event)">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
+        <br>
         <input type="submit" value="Submit">
     </form>
 
     <!-- Example 3: Input with Change Event -->
     <label for="textInput">Type something:</label>
     <input type="text" id="textInput" onchange="showInputValue()">
+    <br>
 
     <!-- Example 4: Image with Mouseover Event -->
     <img src="https://placekitten.com/200/200" alt="Kitten" onmouseover="showImageInfo()">

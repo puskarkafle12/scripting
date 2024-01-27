@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form with JS Validation</title>
+</head>
+<body>
+<style>
+input{
+  padding: 5px;
+  margin: 5px;
+}
+.error{
+  padding: 0px;
+  margin: 0px;
+color: red;
+}
+</style>
+  <h2>Registration Form</h2>
+  <form name="regForm" onsubmit="return validateForm()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" oninput="hideError('nameError')">
+    <div id="nameError" class="error"></div>
+
+    <br>
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" oninput="hideError('emailError')">
+    <div id="emailError" class="error"></div>
+    <br>
+
+    <label for="password">Password:</label>
+    <input type="text" id="password" name="password" oninput="hideError('passwordError')">
+    <div id="passwordError" class="error"></div>
+
+    <br>
+
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" oninput="hideError('confirmError')">
+    <div id="confirmError" class="error"></div>
+
+    <br>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" oninput="hideError('ageError')">
+    <div id="ageError" class="error"></div>
+
+    <br>
+
+    <label for="ageValidation">I am 18 years or older:</label>
+    <input type="checkbox" id="ageValidation" oninput="hideError('ageError')">
+    <br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+function showError(element,message){
+  var errorElement= document.getElementById(element);
+  errorElement.textContent=message;
+  // or you can use innerHTML=message
+}
+function hideError(element) {
+      var errorElement = document.getElementById(element);
+      errorElement.textContent = "";
+    }
+
+
+    function validateForm() {
+      var isvalid=true;
+      var form=document.getElementById("registrationForm");
+      var name = document.regForm.name.value;
+      var email = document.regForm.email.value;
+      var password = document.regForm.password.value;
+      var confirmPassword = document.regForm.confirmPassword.value;
+      var age = document.regForm.age.value;
+      var ageValidation =document.regForm.age.checked;
+      var passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@])[[A-Za-z\d]{8,}$/;
+      var emailRegex = /^[^\s@]+@[^\s@]\.[^\s@]+$/;
+      var nameRegex = /^[A-Za-z]+\s+[A-Za-z]+$/;
+    
+      // if (name === '' || email === '' || password === '' || confirmPassword === '' || age === '') {
+      //   alert('All fields are required');
+      // }
+      if (!nameRegex.test(name)) {
+        showError("nameError","name is not valid");
+        isvalid= false;
+      }
+      if (!emailRegex.test(email)) {
+        showError("emailError","email is not valid");
+        isvalid= false;
+      }
+      
+      if (!passwordRegex.test(password)){
+        showError("passwordError","password must follow all Critera. ");
+        isvalid= false
+      }
+      if (password !== confirmPassword) {
+        showError("confirmError","password donot match ");
+        isvalid= false;
+      }
+
+      if (parseInt(age) < 18) {
+        showError('ageError','Age must be 18 or older');
+        isvalid= false;
+      }
+      if (isvalid){
+        alert("form submitted sucess")
+      }
+      return isvalid;
+      console.log(isvalid)
+    }
+
+    
+  </script>
+
+</body>
+</html>
+
+
+<!-- function validatePassword() {
+  var password = document.getElementById("password").value;
+  var passwordError = document.getElementById("password-error");
+
+  var minLengthRegex = /.{8,}/;
+  var uppercaseRegex = /[A-Z]/;
+  var lowercaseRegex = /[a-z];/
+  var digitRegex = /\d/;
+
+  if (!minLengthRegex.test(password)) {
+      passwordError.textContent = "Password must be at least 8 characters long.";
+  } else if (!uppercaseRegex.test(password)) {
+      passwordError.textContent = "Password must contain at least one uppercase letter.";
+  } else if (!lowercaseRegex.test(password)) {
+      passwordError.textContent = "Password must contain at least one lowercase letter.";
+  } else if (!digitRegex.test(password)) {
+      passwordError.textContent = "Password must contain at least one digit.";
+  } else {
+      passwordError.textContent = "";
+  }
+} -->
