@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables</title>
+    <style>
+        table {
+            width: 100%; /* Set table width to 100% */
+            border-collapse: collapse; /* Collapse borders */
+        }
+        th, td {
+            border: 1px solid black; /* Add border to cells */
+            padding: 8px; /* Add padding to cells */
+            text-align: left; /* Align text to left */
+        }
+        caption {
+            font-weight: bold; /* Make caption bold */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Introduction To Html Tables and Their Structure -->
+<h2>Introduction To Html Tables and Their Structure</h2>
+
+<!-- The Table Tags -->
+<h3>The Table Tags</h3>
+<table>
+    <!-- Table Caption -->
+    <caption>Table Caption</caption>
+    <!-- Table Header -->
+    <thead>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+        </tr>
+    </thead>
+    <!-- Table Body -->
+    <tbody>
+        <!-- Table Row -->
+        <tr>
+            <!-- Table Cell -->
+            <td>Row 1, Cell 1</td>
+            <td>Row 1, Cell 2</td>
+        </tr>
+        <tr>
+            <td>Row 2, Cell 1</td>
+            <td>Row 2, Cell 2</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Alignment -->
+<h3>Alignment</h3>
+<!-- Aligning Entire Table -->
+<table align="center">
+    <tr>
+        <td>Centered Table</td>
+    </tr>
+</table>
+
+<!-- Alignment within a Row -->
+<table>
+    <tr>
+        <td align="left">Left</td>
+        <td align="center">Center</td>
+        <td align="right">Right</td>
+    </tr>
+</table>
+
+<!-- Alignment within a Cell -->
+<table>
+    <tr>
+        <td style="text-align: left;">Left</td>
+        <td style="text-align: center;">Center</td>
+        <td style="text-align: right;">Right</td>
+    </tr>
+</table>
+
+<!-- Attributes -->
+<h3>Attributes</h3>
+<table border="1">
+    <tr>
+        <td>Border</td>
+    </tr>
+</table>
+
+<!-- Background Color -->
+<table>
+    <tr>
+        <td style="background-color: lightblue;">Light Blue</td>
+        <td style="background-color: lightgreen;">Light Green</td>
+    </tr>
+</table>
+
+<!-- Adding a Caption -->
+<table>
+    <caption>Table Caption</caption>
+    <tr>
+        <td>Caption</td>
+    </tr>
+</table>
+
+<!-- Setting the Width -->
+<table width="50%">
+    <tr>
+        <td>50% Width</td>
+    </tr>
+</table>
+
+<!-- Adding a Border -->
+<table border="1">
+    <tr>
+        <td>Border</td>
+    </tr>
+</table>
+
+<!-- Spacing Within a Cells -->
+<h3>Spacing Within a Cells</h3>
+<table cellpadding="10">
+    <tr>
+        <td>Padding</td>
+    </tr>
+</table>
+
+<!-- Spanning Multiple Rows or Columns -->
+<h3>Spanning Multiple Rows or Columns</h3>
+<table border="1">
+    <tr>
+        <td rowspan="2">Rowspan 2</td>
+        <td colspan="2">Colspan 2</td>
+    </tr>
+    <tr>
+        <td>Col 1</td>
+        <td>Col 2</td>
+    </tr>
+</table>
+
+<!-- Elements that and be Placed in a Table -->
+<h3>Elements that and be Placed in a Table</h3>
+<table>
+    <tr>
+        <td>Text</td>
+        <td><a href="#">Link</a></td>
+        <td><img src="image.jpg" alt="Image"></td>
+    </tr>
+</table>
+
+
+
+
+<!-- Table sections, such as the <thead>, <tbody>, and <tfoot> elements, are used to organize the content within an HTML table. Each section serves a specific purpose and provides benefits in terms of structure, semantics, and functionality:
+
+    <thead> (Table Header):
+    
+    Contains the header rows of the table, typically including column headings.
+    Provides a clear visual separation of the table header from the body content.
+    Helps assistive technologies, such as screen readers, to identify and properly label table headers, improving accessibility.
+    Allows for styling or applying specific attributes to the header rows separately from the rest of the table.
+    <tbody> (Table Body):
+    
+    Contains the main content or data rows of the table.
+    Separating the body content from the header and footer improves readability and maintainability of the HTML code.
+    Provides a clear structure for JavaScript manipulation, enabling easy targeting of specific sections of the table for dynamic updates or interactions.
+    <tfoot> (Table Footer):
+    
+    Contains footer rows of the table, typically used for summary information or totals.
+    Helps maintain consistency in the presentation of summary data across multiple pages or sections of a large table.
+    Supports accessibility by clearly distinguishing footer content from the body content, making it easier for screen readers to interpret. -->
+
+
+
+
+
+
+<!-- Table Sections and Column Properties -->
+<h3>Table Sections and Column Properties</h3>
+<table>
+    <!-- Table Header -->
+    <thead>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+        </tr>
+    </thead>
+    <!-- Table Body -->
+    <tbody>
+        <tr>
+            <td>Row 1, Cell 1</td>
+            <td>Row 1, Cell 2</td>
+        </tr>
+    </tbody>
+    <!-- Table Footer -->
+    <tfoot>
+        <tr>
+            <td colspan="2">Footer</td>
+        </tr>
+    </tfoot>
+</table>
+
+<!-- Table as a Design Tool -->
+<h3>Table as a Design Tool</h3>
+<table>
+    <tr>
+        <td style="background-color: lightblue;">Content 1</td>
+        <td style="background-color: lightgreen;">Content 2</td>
+    </tr>
+</table>
+
+</body>
+</html>

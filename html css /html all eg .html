@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Basics, Image & Imagemaps, Tables</title>
+  <style>
+    /* Add your CSS styles here */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- HTML Basics -->
+  <h1>HTML Basics</h1>
+  <h2>HTML Tag Reference</h2>
+  <p>HTML tags define the structure and content of a web page.</p>
+  <h2>Global Attributes</h2>
+  <p>Global attributes are attributes that can be applied to any HTML element.</p>
+
+  <!-- Document Structure Tags -->
+  <h2>Document Structure Tags</h2>
+  <header>
+    <h1>Header</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#">Link 1</a></li>
+      <li><a href="#">Link 2</a></li>
+      <li><a href="#">Link 3</a></li>
+    </ul>
+  </nav>
+  <main>
+    <article>
+      <h2>Article</h2>
+      <p>Article content goes here...</p>
+    </article>
+    <aside>
+      <h2>Aside</h2>
+      <p>Additional information...</p>
+    </aside>
+  </main>
+  <footer>
+    <p>Footer content</p>
+  </footer>
+
+  <!-- Formatting Tags -->
+  <h2>Formatting Tags</h2>
+  <p><em>Italic text</em></p>
+  <p><strong>Bold text</strong></p>
+  <p><u>Underlined text</u></p>
+
+  <!-- Text Level Formatting -->
+  <h2>Text Level Formatting</h2>
+  <p>Superscript: H<sup>2</sup>O</p>
+  <p>Subscript: CO<sub>2</sub></p>
+
+  <!-- Block Level Formatting -->
+  <h2>Block Level Formatting</h2>
+  <div style="background-color: lightgrey; padding: 10px;">
+    <p>This is a block-level element.</p>
+  </div>
+
+  <!-- List Tags -->
+  <h2>List Tags</h2>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <!-- Executable Content Tags -->
+  <h2>Executable Content Tags</h2>
+  <p>&lt;script&gt; tag is used for adding JavaScript code.</p>
+
+  <!-- Image & Imagemaps -->
+  <h1>Image & Imagemaps</h1>
+  <h2>Introduction</h2>
+  <p>Images enhance visual appeal and user experience on a website.</p>
+  <h2>Client-Side Imagemaps</h2>
+  <p>Clickable areas on an image linked to different URLs.</p>
+  <img src="image.jpg" alt="Image" usemap="#image-map">
+  <map name="image-map">
+    <area shape="rect" coords="0,0,100,100" alt="Area 1">
+    <area shape="circle" coords="150,150,50" alt="Area 2">
+    <area shape="poly" coords="200,0,250,50,200,100" alt="Area 3">
+  </map>
+  <h2>Server-Side Imagemaps</h2>
+  <p>Processed by a server to determine linked URLs based on mouse clicks.</p>
+  <h2>Using Server-Side and Client-Side Imagemaps Together</h2>
+  <p>Combining the advantages of both types of imagemaps.</p>
+  <h2>Alternative Text for Imagemaps</h2>
+  <p>Provides text descriptions for images for accessibility.</p>
+
+  <!-- Tables -->
+  <h1>Tables</h1>
+  <h2>Introduction To HTML Tables and Their Structure</h2>
+  <p>Tables are used to organize data into rows and columns.</p>
+  <h2>The Table Tags</h2>
+  <table>
+    <caption>Table Caption</caption>
+    <thead>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Row 1, Cell 1</td>
+        <td>Row 1, Cell 2</td>
+      </tr>
+      <tr>
+        <td>Row 2, Cell 1</td>
+        <td>Row 2, Cell 2</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Alignment</h2>
+  <p>Alignment of table content can be specified using CSS.</p>
+  <h2>Aligning Entire Table</h2>
+  <p>Use CSS to align the entire table.</p>
+  <h2>Alignment within a Row</h2>
+  <p>Use CSS to align content within a row.</p>
+  <h2>Alignment within a Cell</h2>
+  <p>Use CSS to align content within a cell.</p>
+  <h2>Attributes</h2>
+  <p>HTML attributes can be applied to control various aspects of tables.</p>
+  <h2>Content Summary</h2>
+  <p>Use the summary attribute to provide a summary of the table's content for accessibility.</p>
+  <h2>Background Color</h2>
+  <p>Set background color for table cells using CSS.</p>
+  <h2>Adding a Caption</h2>
+  <!-- &lt; represents the less-than symbol <.
+&gt; represents the greater-than symbol >.
+&amp; represents the ampersand symbol &.
+&quot; represents the double quotation mark ".
+&apos; represents the apostrophe or single quotation mark '. -->
+  <p>Use the <code>&lt;caption&gt;</code> tag to add a caption to the table.</p>
+  <h2>Setting the Width</h2>
+  <p>Set the width of the table using CSS.</p>
+  <h2>Adding a Border</h2>
+  <p>Add borders to the table and its cells using CSS.</p>
+  <h2>Spacing Within a Cells</h2>
+  <p>Control spacing between cells using CSS.</p>
+  <h2>Spanning Multiple Rows or Columns</h2>
+  <p>Use the rowspan and colspan attributes to span multiple rows or columns.</p>
+  <h2>Elements that can be Placed in a Table</h2>
+  <p>Various HTML elements can be placed within table cells.</p>
+  <h2>Table Sections and Column Properties</h2>
+  <p>Use thead, tbody, tfoot to define sections of a table and colgroup, col to define column properties.</p>
+  <h2>Table as a Design Tool</h2>
+  <p>Tables can be used for layout and design purposes in HTML.</p>
+
+</body>
+</html>
