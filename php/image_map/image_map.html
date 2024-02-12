@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imagemaps Example</title>
+</head>
+<body>
+  <h1>Imagemaps Example</h1>
+  
+  <h2>Client-Side Imagemap</h2>
+  <img src="images.jpeg" alt="Example Image with Client-Side Imagemap" usemap="#clientside">
+  <map name="clientside">
+    <area shape="rect" coords="77,171,195,25" href="computer.html" alt="Clickable Area 1">
+    <area shape="circle" coords="226,145,26" href="coffee.html" alt="Clickable Area 2">
+  </map>
+
+  <h2>Server-Side Imagemap</h2>
+  <img src="example.jpeg" alt="Example Image with Server-Side Imagemap" usemap="#serverside" width="500px" height="500px">
+  <map name="serverside">
+    <area shape="rect" coords="0,0,250,250" href="server_side_script.php?area=1" alt="Clickable Area 1">
+    <area shape="rect" coords="250,250,500,500" href="server_side_script.php?area=2" alt="Clickable Area 2">
+  </map>
+
+</body>
+</html>
