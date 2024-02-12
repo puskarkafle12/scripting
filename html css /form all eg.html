@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Form Demo</title>
+</head>
+<body>
+
+<h2>HTML Form</h2>
+
+<form action="/submit_form" method="post">
+
+    <label for="textbox">Text Box:</label>
+    <input type="text" id="textbox" maxlength="50" name="textbox"><br><br>
+
+    <label for="password">Password Box:</label>
+    <input type="password" id="password" name="password"><br><br>
+
+    <label for="checkbox">Checkboxes:</label><br>
+    <input type="checkbox" id="checkbox1" name="checkbox1" value="checkbox1">
+    <label for="checkbox1">Option 1</label><br>
+    <input type="checkbox" id="checkbox2" name="checkbox2" value="checkbox2" checked>
+    <label for="checkbox2">Option 2</label><br><br>
+
+    <label for="radiobox">Radio Box:</label><br>
+    <input type="radio" id="radio1" name="radiobox" value="radio1">
+    <label for="radio1">Option 1</label><br>
+    <input type="radio" id="radio2" name="radiobox" value="radio2" checked>
+    <label for="radio2" >Option 2</label><br><br>
+
+    <label for="selectbox">Select Box:</label><br>
+    <select id="selectbox" name="selectbox">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3" selected>Option 3</option>
+    </select><br><br>
+
+    <label for="file">File Select Box:</label>
+    <input type="file" id="file" name="file"><br><br>
+
+    <input type="hidden" id="hidden" name="hidden" value="hidden_value">
+
+    <label for="submit">Submit Button:</label>
+    <input type="submit" id="submit" value="Submit"><br><br>
+
+    <label for="reset">Reset Button:</label>
+    <input type="reset" id="reset" value="Reset">
+
+</form>
+</body>
+</html>

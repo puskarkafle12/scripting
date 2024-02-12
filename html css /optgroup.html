@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grouped Select Options Demo</title>
+</head>
+<body>
+
+<h2>Choose your course:</h2>
+
+<form action="/submit_form" method="post">
+    <select name="course">
+        <optgroup label="FOHSS"> <!-- Group 1 -->
+            <option value="bca">BCA</option>
+            <option value="mca">MCA</option>
+        </optgroup>
+        <optgroup label="FOM"> <!-- Group 2 -->
+            <option value="bba">BBA</option>
+            <option value="mba">MBA</option>
+        </optgroup>
+    </select><br><br>
+    
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
