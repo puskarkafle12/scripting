@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Field Event Handlers</title>
+</head>
+<body>
+
+<h2>Form Field Event Handlers</h2>
+
+<form>
+  <label for="username">Username:</label>
+  <input type="text" id="username" onchange="handleChange(this)" oninput="handleInput(this)">
+  <br><br>
+  
+  <label for="password">Password:</label>
+  <input type="password" id="password" onfocus="handleFocus(this)" onblur="handleBlur(this)">
+  <br><br>
+  
+  <label for="comment">Comment:</label><br>
+  <textarea id="comment" cols="30" rows="5" onkeydown="handleKeyDown(event)"></textarea>
+  <br><br>
+  
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+function handleChange(element) {
+  console.log("Value changed to: " + element.value);
+}
+
+function handleInput(element) {
+  console.log("Input value: " + element.value);
+}
+
+function handleFocus(element) {
+  console.log("Field focused: " + element.id);
+}
+
+function handleBlur(element) {
+  console.log("Field blurred: " + element.id);
+}
+
+function handleKeyDown(event) {
+  console.log("Key pressed: " + event.key);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery: Hide and Show Images</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+</head>
+<body>
+
+<img id="image" src="example.jpeg" alt="Image">
+
+<button id="hide-btn">Hide Image</button>
+<button id="show-btn">Show Image</button>
+
+<script>
+$(document).ready(function(){
+    // $('#image').hide();
+
+    $('#hide-btn').click(function(){
+        $('#image').fadeOut();
+
+        // $('#image').hide();
+    });
+    $('#show-btn').click(function(){
+        // $('#image').show();
+        $('#image').fadeIn()
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJAX Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Send GET request
+    $('#get-btn').click(function() {
+        $.get('https://jsonplaceholder.typicode.com/posts/1', function(response) {
+            $('#result').text(JSON.stringify(response));
+        });
+    });
+
+    // Send POST request
+    $('#post-btn').click(function() {
+        $.post('https://jsonplaceholder.typicode.com/posts', { title: 'foo', body: 'bar', userId: 1 }, function(response) {
+            $('#result').text(JSON.stringify(response));
+        });
+    });
+});
+</script>
+</head>
+<body>
+    <button id="get-btn">Send GET Request</button>
+    <button id="post-btn">Send POST Request</button>
+    <div id="result"></div>
+</body>
+</html>
