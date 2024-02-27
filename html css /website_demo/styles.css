@@ -1,0 +1,88 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    box-sizing:border-box;
+    /* overflow: hidden; */
+}
+
+.right {
+    display: flex;
+
+}
+
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.nav {
+
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    /* text-align: center; */
+    padding: 0px 20px 0 20px;
+    /* position: absolute; */
+    top: 0px;
+    width: calc(100vw-40px);
+    height: 8vh;
+    background-color: rgb(106, 186, 145);
+}
+
+#general-button {
+
+    color: rgb(0, 179, 255);
+    padding: 50px;
+    margin: 100px;
+    border: 10px solid red;
+}
+
+.menu-icon {
+    justify-content: center;
+    color: rgb(237, 226, 226);
+    text-align: right;
+    cursor: pointer;
+}
+
+p{
+    padding: 20px;
+}
+
+a {
+
+    text-decoration: none;
+    color: rgb(245, 237, 237);
+    font-weight: 3rem;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: font-size 0.3s ease;
+}
+a:hover,.menu-icon:hover{
+    font-weight:bold;
+    font-size: 1.2rem;
+}
+article{
+    padding: 3rem;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0px;
+    padding: 30px;
+    color: white;
+    background-color: grey;
+    height: 100vh;
+    width: 300px;
+    /* Add transition properties */
+    transition: transform 1s ease-in-out;
+    transform: translateX(-400px); /* Start off-screen to the left */
+}
+
+.sidebar.active {
+    transform: translateX(0); /* Slide in from the left */
+}

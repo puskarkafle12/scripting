@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery Task Manager</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+  /* Some basic styling for demonstration purposes */
+  body {
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  #taskInput {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+  }
+  .taskItem {
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .taskItem:hover {
+    background-color: #eaeaea;
+  }
+  .taskItem.completed {
+    text-decoration: line-through;
+    color: #999;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>jQuery Task Manager</h1>
+  <input type="text" id="taskInput" placeholder="Add New Task">
+  <ul id="taskList"></ul>
+</div>
+
+<script>
+$(document).ready(function() {
+  // Load tasks from localStorage on page load
+//   loadTasks();
+
+  // Add new task
+  $("#taskInput").keypress(function(event) {
+    if (event.which === 13) {
+      var taskText = $(this).val();
+      if (taskText.trim() !== "") {
+        addTask(taskText);
+        saveTasks();
+        $(this).val("");
+      }
+    }
+  });
+
+  // Toggle task completion
+  $("#taskList").on("click", ".taskItem", function() {
+    $(this).toggleClass("completed");
+    saveTasks();
+  });
+
+  // Delete task
+  $("#taskList").on("click", ".deleteButton", function(event) {
+    event.stopPropagation();
+    $(this).parent().remove();
+    saveTasks();
+  });
+
+  // Function to add a new task
+  function addTask(taskText) {
+    var newTaskItem = $("<li>").addClass("taskItem").text(taskText);
+    var deleteButton = $("<span>").addClass("deleteButton").text("x");
+    newTaskItem.append(deleteButton);
+    $("#taskList").append(newTaskItem);
+  }
+
+  // Function to save tasks to localStorage
+  function saveTasks() {
+    var tasks = [];
+    $(".taskItem").each(function() {
+      var task = {
+        text: $(this).text(),
+        completed: $(this).hasClass("completed")
+      };
+      tasks.push(task);
+    });
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }
+
+//   Function to load tasks from localStorage
+  function loadTasks() {
+    var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    tasks.forEach(function(task) {
+      addTask(task.text);
+      if (task.completed) {
+        $("#taskList li").last().addClass("completed");
+      }
+    });
+  }
+});
+</script>
+
+</body>
+</html>

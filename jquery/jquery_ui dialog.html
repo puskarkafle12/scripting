@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery UI Dialog Example</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+    <div id="dialog" title="Dialog Title">
+        <p>This is a dialog box</p>
+    </div>
+    <button id="openDialog">Open Dialog</button>
+
+    <script>
+        $(document).ready(function(){
+            $("#dialog").dialog({
+                autoOpen: false
+            });
+
+            $("#openDialog").click(function(){
+                $("#dialog").dialog("open");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX with PHP and MySQL</title>
+    <script>
+        function getUsers() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'get_users.php', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var users = JSON.parse(xhr.responseText);
+                    displayUsers(users);
+                }
+            };
+            xhr.send();
+        }
+
+        function displayUsers(users) {
+            var table = '<table border="1"><tr><th>ID</th><th>Name</th><th>Email</th></tr>';
+            for (var i = 0; i < users.length; i++) {
+                table += '<tr><td>' + users[i].id + '</td><td>' + users[i].username + '</td><td>' + users[i].password + '</td></tr>';
+            }
+            table += '</table>';
+            document.getElementById('userTable').innerHTML = table;
+        }
+    </script>
+</head>
+<body>
+    <h1>Users</h1>
+    <button onclick="getUsers()">Get Users</button>
+    <div id="userTable"></div>
+</body>
+</html>

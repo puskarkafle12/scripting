@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Form</title>
+</head>
+<body>
+    <style>
+        .container{
+            position: absolute;
+            top:50%;
+            left:50%;
+            /* transform: translate(-50%,-50%); */
+
+        }
+        input{
+            padding: 5px;
+            margin:  5px;
+            border-radius: 10px;
+        }
+
+    </style>
+<div class="container">
+    
+    <form id="loginForm" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+
+</div>
+
+<script>
+// document.getElementById('loginForm').addEventListener('submit', function(event) {
+//     event.preventDefault(); // Prevent the default form submission
+    
+//     // Get username and password input values
+//     var username = document.getElementById('username').value;
+//     var password = document.getElementById('password').value;
+    
+//     // You can perform further validation here before submitting the form
+    
+//     // Example: Sending form data via AJAX
+//     var formData = new FormData();
+//     formData.append('username', username);
+//     formData.append('password', password);
+    
+//     // Here, you can use AJAX to send the form data to the server
+//     // For demonstration purposes, let's just log the form data
+//     console.log('Username:', username);
+//     console.log('Password:', password);
+// });
+</script>
+
+</body>
+</html>

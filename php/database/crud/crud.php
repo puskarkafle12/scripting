@@ -1,15 +1,5 @@
 <?php
-// Database connection
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "scripting"; // Replace with your actual database name
-
-$conn = new mysqli($servername, $username, $password, $database);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'config.php';
 
 // CRUD Operations
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

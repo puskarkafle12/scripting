@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery  DOM Manipulation Demo</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+  /* Some basic styling for demonstration purposes */
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    margin: 10px;
+    display: inline-block;
+  }
+  .highlight {
+    border: 2px solid red;
+  }
+</style>
+</head>
+<body>
+
+<h1>jQuery vs JavaScript DOM Manipulation Demo</h1>
+
+<div id="container">
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+</div>
+
+<button id="appendBox">Append Box</button>
+<button id="removeBox">Remove Box</button>
+<button id="emptyContainer">Empty Container</button>
+<button id="changeText">Change Text</button>
+<button id="addClass">Add Class</button>
+<button id="removeClass">Remove Class</button>
+<button id="toggleVisibility">Toggle Visibility</button>
+<button id="changeHtml">Change HTML</button>
+<button id="eventHandling">Event Handling</button>
+<button id="ajaxAppend">Append via Ajax</button>
+
+<script>
+  // jQuery code
+  $(document).ready(function() {
+    // Append a new box to the container
+    $("#appendBox").click(function() {
+      $("#container").append("<div class='box'>New Box</div>");
+    });
+
+    // Remove the last box from the container
+    $("#removeBox").click(function() {
+      $("#container .box:last").remove();
+    });
+
+    // Empty the container
+    $("#emptyContainer").click(function() {
+      $("#container").empty();
+    });
+
+    // Change text of the first box
+    $("#changeText").click(function() {
+      $("#container .box:first").text("Modified Text");
+    });
+
+    // Add a class to all boxes
+    $("#addClass").click(function() {
+      $(".box").addClass("highlight");
+    });
+
+    // Remove a class from all boxes
+    $("#removeClass").click(function() {
+      $(".box").removeClass("highlight");
+    });
+
+    // Toggle visibility of all boxes
+    $("#toggleVisibility").click(function() {
+      $(".box").toggle();
+    });
+
+    // Change inner HTML of the container
+    $("#changeHtml").click(function() {
+      $("#container").html("<div class='box'>Modified HTML</div>");
+    });
+
+    // Event handling
+    $("#eventHandling").click(function() {
+      $(".box").on("click", function() {
+        alert("You clicked on " + $(this).text());
+      });
+    });
+
+    // Append via Ajax
+    $("#ajaxAppend").click(function() {
+      $.ajax({
+        url: "example-ajax-content.html",
+        success: function(data) {
+          $("#container").append(data);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  /* JavaScript code
+  document.addEventListener('DOMContentLoaded', function() {
+    // Append a new box to the container
+    document.getElementById('appendBox').addEventListener('click', function() {
+      var newBox = document.createElement('div');
+      newBox.className = 'box';
+      newBox.textContent = 'New Box';
+      document.getElementById('container').appendChild(newBox);
+    });
+
+    // Remove the last box from the container
+    document.getElementById('removeBox').addEventListener('click', function() {
+      var container = document.getElementById('container');
+      var boxes = container.getElementsByClassName('box');
+      if (boxes.length > 0) {
+        container.removeChild(boxes[boxes.length - 1]);
+      }
+    });
+
+    // Empty the container
+    document.getElementById('emptyContainer').addEventListener('click', function() {
+      document.getElementById('container').innerHTML = '';
+    });
+
+    // Change text of the first box
+    document.getElementById('changeText').addEventListener('click', function() {
+      var firstBox = document.querySelector('.box');
+      if (firstBox) {
+        firstBox.textContent = 'Modified Text';
+      }
+    });
+
+    // Add a class to all boxes
+    document.getElementById('addClass').addEventListener('click', function() {
+      var boxes = document.querySelectorAll('.box');
+      boxes.forEach(function(box) {
+        box.classList.add('highlight');
+      });
+    });
+
+    // Remove a class from all boxes
+    document.getElementById('removeClass').addEventListener('click', function() {
+      var boxes = document.querySelectorAll('.box');
+      boxes.forEach(function(box) {
+        box.classList.remove('highlight');
+      });
+    });
+
+    // Toggle visibility of all boxes
+    document.getElementById('toggleVisibility').addEventListener('click', function() {
+      var boxes = document.querySelectorAll('.box');
+      boxes.forEach(function(box) {
+        box.style.display = box.style.display === 'none' ? 'inline-block' : 'none';
+      });
+    });
+
+    // Change inner HTML of the container
+    document.getElementById('changeHtml').addEventListener('click', function() {
+      document.getElementById('container').innerHTML = "<div class='box'>Modified HTML</div>";
+    });
+
+    // Event handling
+    document.getElementById('eventHandling').addEventListener('click', function() {
+      var boxes = document.querySelectorAll('.box');
+      boxes.forEach(function(box) {
+        box.addEventListener('click', function() {
+          alert("You clicked on " + this.textContent);
+        });
+      });
+    });
+
+    // Append via Ajax
+    document.getElementById('ajaxAppend').addEventListener('click', function() {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'example-ajax-content.html', true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+          document.getElementById('container').insertAdjacentHTML('beforeend', xhr.responseText);
+        }
+      };
+      xhr.send();
+    });
+  });
+  */
+</script>
+
+</body>
+</html>

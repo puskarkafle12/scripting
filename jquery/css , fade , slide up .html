@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery Demo</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+  /* Some basic styling for demonstration purposes */
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    margin: 10px;
+  }
+</style>
+</head>
+<body>
+
+<h1>jQuery Demo</h1>
+
+<div class="box" id="box1"></div>
+<div class="box" id="box2"></div>
+
+<button id="changeColor">Change Color</button>
+<button id="slideUp">Slide Up</button>
+<button id="fadeToggle">Fade Toggle</button>
+
+<script>
+  // jQuery code
+  $(document).ready(function() {
+    // Change color on button click
+    $("#changeColor").click(function() {
+      $(".box").css("background-color", "red");
+    });
+
+    // Slide up animation on button click
+    $("#slideUp").click(function() {
+      $(".box").slideUp();
+    });
+
+    // Toggle fading animation on button click
+    $("#fadeToggle").click(function() {
+
+      $(".box").fadeToggle();
+    //   $(".box").slideDown();
+    });
+  });
+</script>
+
+</body>
+</html>
